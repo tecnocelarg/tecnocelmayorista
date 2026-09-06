@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tecnocel | Tecnología Mayorista</title>
+    <meta name="description" content="Tecnocel - Tecnología y accesorios mayoristas. Fundas, cargadores, vidrios, AirPods, parlantes y mucho más.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="top-bar">
+    <div class="container">
+        <p>🚚 Envíos a todo el país</p>
+        <p>💳 Compra mínima mayorista: <strong>$50.000</strong></p>
+        <p>📲 Atención por WhatsApp</p>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="container header-container">
+
+        <a href="index.html" class="logo">
+            <span class="logo-tech">TECNO</span><span class="logo-cel">CEL</span>
+        </a>
+
+        <nav class="nav">
+
+            <a href="#inicio">Inicio</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#productos">Productos</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="#contacto">Contacto</a>
+
+        </nav>
+
+
+        <div class="header-actions">
+
+            <button class="search-button" onclick="focusSearch()">
+                🔍
+            </button>
+
+            <button class="cart-button" onclick="openCart()">
+
+                🛒
+
+                <span id="cart-count">0</span>
+
+            </button>
+
+            <button class="menu-button" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div class="mobile-menu" id="mobile-menu">
+
+    <a href="#inicio" onclick="closeMobileMenu()">Inicio</a>
+    <a href="#categorias" onclick="closeMobileMenu()">Categorías</a>
+    <a href="#productos" onclick="closeMobileMenu()">Productos</a>
+    <a href="#ofertas" onclick="closeMobileMenu()">Ofertas</a>
+    <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-background"></div>
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span></span>
+                MAYORISTA DE TECNOLOGÍA
+            </div>
+
+            <h1>
+                Tecnología que
+                <span>conecta.</span>
+            </h1>
+
+            <p>
+                Accesorios, gadgets y tecnología al mejor precio
+                mayorista. Armá tu pedido y recibilo donde estés.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#productos" class="btn btn-primary">
+                    Ver productos →
+                </a>
+
+                <a href="#categorias" class="btn btn-secondary">
+                    Explorar categorías
+                </a>
+
+            </div>
+
+            <div class="hero-info">
+
+                <div>
+                    <strong>+100</strong>
+                    <span>Productos</span>
+                </div>
+
+                <div>
+                    <strong>100%</strong>
+                    <span>Mayorista</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Pedidos online</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="floating-card card-one">
+                <span>🔥</span>
+                <div>
+                    <strong>Ofertas</strong>
+                    <small>Hasta 30% OFF</small>
+                </div>
+            </div>
+
+            <div class="product-orbit">
+
+                <div class="orbit-circle"></div>
+
+                <div class="hero-product">
+                    📱
+                </div>
+
+                <div class="small-product product-one">
+                    🎧
+                </div>
+
+                <div class="small-product product-two">
+                    🔌
+                </div>
+
+                <div class="small-product product-three">
+                    🔊
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<section class="search-section">
+
+    <div class="container">
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="¿Qué estás buscando?"
+                oninput="searchProducts()"
+            >
+
+            <button onclick="clearSearch()">
+                Limpiar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CATEGORÍAS
+===================================================== -->
+
+<section class="categories-section" id="categorias">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">EXPLORÁ</span>
+                <h2>Comprar por categoría</h2>
+            </div>
+
+            <a href="#productos">
+                Ver todo →
+            </a>
+
+        </div>
+
+
+        <div class="categories-grid">
+
+            <button class="category-card" onclick="filterCategory('Fundas')">
+
+                <div class="category-icon">
+                    📱
+                </div>
+
+                <div>
+                    <h3>Fundas</h3>
+                    <p>iPhone y más</p>
+                </div>
+
+                <span>→</span>
+
+            </button>
+
+
+            <button class="category-card" onclick="filterCategory('Cargadores')">
+
+                <div class="category-icon">
+                    🔌
+                </div>
+
+                <div>
+                    <h3>Cargadores</h3>
+                    <p>Carga rápida</p>
+                </div>
+
+                <span>→</span>
+
+            </button>
+
+
+            <button class="category-card" onclick="filterCategory('Vidrios')">
+
+                <div class="category-icon">
+                    🛡️
+                </div>
+
+                <div>
+                    <h3>Vidrios</h3>
+                    <p>Protección</p>
+                </div>
+
+                <span>→</span>
+
+            </button>
+
+
+            <button class="category-card" onclick="filterCategory('Audio')">
+
+                <div class="category-icon">
+                    🎧
+                </div>
+
+                <div>
+                    <h3>Audio</h3>
+                    <p>AirPods y más</p>
+                </div>
+
+                <span>→</span>
+
+            </button>
+
+
+            <button class="category-card" onclick="filterCategory('Parlantes')">
+
+                <div class="category-icon">
+                    🔊
+                </div>
+
+                <div>
+                    <h3>Parlantes</h3>
+                    <p>Sonido portátil</p>
+                </div>
+
+                <span>→</span>
+
+            </button>
+
+
+            <button class="category-card" onclick="filterCategory('Accesorios')">
+
+                <div class="category-icon">
+                    ⚡
+                </div>
+
+                <div>
+                    <h3>Accesorios</h3>
+                    <p>Todo tecnología</p>
+                </div>
+
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCTOS
+===================================================== -->
+
+<section class="products-section" id="productos">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">CATÁLOGO</span>
+                <h2>Productos destacados</h2>
+            </div>
+
+            <div class="product-controls">
+
+                <select id="sort-select" onchange="sortProducts()">
+
+                    <option value="relevance">
+                        Más relevantes
+                    </option>
+
+                    <option value="price-low">
+                        Precio: menor a mayor
+                    </option>
+
+                    <option value="price-high">
+                        Precio: mayor a menor
+                    </option>
+
+                    <option value="new">
+                        Más nuevos
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-filter">
+
+            <button class="filter active" onclick="filterCategory('Todos')">
+                Todos
+            </button>
+
+            <button class="filter" onclick="filterCategory('Fundas')">
+                Fundas
+            </button>
+
+            <button class="filter" onclick="filterCategory('Cargadores')">
+                Cargadores
+            </button>
+
+            <button class="filter" onclick="filterCategory('Vidrios')">
+                Vidrios
+            </button>
+
+            <button class="filter" onclick="filterCategory('Audio')">
+                Audio
+            </button>
+
+            <button class="filter" onclick="filterCategory('Parlantes')">
+                Parlantes
+            </button>
+
+        </div>
+
+
+        <div id="products-grid" class="products-grid"></div>
+
+
+        <div id="no-results" class="no-results">
+
+            <div>🔎</div>
+
+            <h3>No encontramos productos</h3>
+
+            <p>
+                Probá buscando otro producto o categoría.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BANNER OFERTA
+===================================================== -->
+
+<section class="offer-section" id="ofertas">
+
+    <div class="container">
+
+        <div class="offer-banner">
+
+            <div class="offer-content">
+
+                <span class="section-label">
+                    OFERTA MAYORISTA
+                </span>
+
+                <h2>
+                    Precios especiales
+                    <br>
+                    para tu negocio.
+                </h2>
+
+                <p>
+                    Armá tu pedido con los productos que necesitás
+                    y accedé a nuestros precios mayoristas.
+                </p>
+
+                <a href="#productos" class="btn btn-white">
+                    Ver ofertas →
+                </a>
+
+            </div>
+
+
+            <div class="offer-discount">
+
+                <span>HASTA</span>
+
+                <strong>30%</strong>
+
+                <span>OFF</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BENEFICIOS
+===================================================== -->
+
+<section class="benefits-section">
+
+    <div class="container">
+
+        <div class="benefits-grid">
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    🚚
+                </div>
+
+                <div>
+                    <h3>Envíos a todo el país</h3>
+                    <p>
+                        Recibí tus productos estés donde estés.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    💰
+                </div>
+
+                <div>
+                    <h3>Precio mayorista</h3>
+                    <p>
+                        Precios pensados para revendedores.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    📦
+                </div>
+
+                <div>
+                    <h3>Gran variedad</h3>
+                    <p>
+                        Todo lo que necesitás en un solo lugar.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    💬
+                </div>
+
+                <div>
+                    <h3>Atención personalizada</h3>
+                    <p>
+                        Te ayudamos con tu pedido por WhatsApp.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INSTAGRAM
+===================================================== -->
+
+<section class="instagram-section">
+
+    <div class="container instagram-container">
+
+        <div>
+
+            <span class="section-label">
+                SEGUINOS
+            </span>
+
+            <h2>
+                @tecnocel.rc
+            </h2>
+
+            <p>
+                Conocé nuestras novedades, productos y ofertas
+                también en Instagram.
+            </p>
+
+            <a
+                href="https://www.instagram.com/tecnocel.rc/"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                Ver Instagram →
+            </a>
+
+        </div>
+
+
+        <div class="instagram-grid">
+
+            <div>📱</div>
+            <div>🎧</div>
+            <div>🔌</div>
+            <div>🔊</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
+
+<section class="newsletter-section">
+
+    <div class="container">
+
+        <div class="newsletter">
+
+            <div>
+
+                <span class="section-label">
+                    NOVEDADES
+                </span>
+
+                <h2>
+                    Enterate antes que nadie.
+                </h2>
+
+                <p>
+                    Recibí novedades, nuevos productos y ofertas.
+                </p>
+
+            </div>
+
+
+            <form onsubmit="subscribeNewsletter(event)">
+
+                <input
+                    type="email"
+                    placeholder="Tu email"
+                    required
+                >
+
+                <button type="submit">
+                    Suscribirme
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer" id="contacto">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-tech">TECNO</span><span class="logo-cel">CEL</span>
+                </a>
+
+                <p>
+                    Tecnología que conecta.
+                    <br>
+                    Venta mayorista de tecnología y accesorios.
+                </p>
+
+                <div class="socials">
+
+                    <a
+                        href="https://www.instagram.com/tecnocel.rc/"
+                        target="_blank"
+                    >
+                        Instagram
+                    </a>
+
+                    <a href="#" onclick="openWhatsApp()">
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h4>Tienda</h4>
+
+                <a href="#productos">Productos</a>
+                <a href="#categorias">Categorías</a>
+                <a href="#ofertas">Ofertas</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Ayuda</h4>
+
+                <a href="#">Cómo comprar</a>
+                <a href="#">Envíos</a>
+                <a href="#">Medios de pago</a>
+                <a href="#">Cambios y devoluciones</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Contacto</h4>
+
+                <a href="#" onclick="openWhatsApp()">
+                    WhatsApp
+                </a>
+
+                <a href="https://www.instagram.com/tecnocel.rc/" target="_blank">
+                    Instagram
+                </a>
+
+                <span>
+                    Atención personalizada
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Tecnocel. Todos los derechos reservados.
+            </p>
+
+            <p>
+                Compra mínima: $50.000
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     CART DRAWER
+===================================================== -->
+
+<div
+    class="cart-overlay"
+    id="cart-overlay"
+    onclick="closeCart()"
+></div>
+
+
+<aside class="cart-drawer" id="cart-drawer">
+
+    <div class="cart-header">
+
+        <div>
+            <span class="section-label">
+                TU PEDIDO
+            </span>
+
+            <h2>
+                Carrito
+            </h2>
+        </div>
+
+        <button onclick="closeCart()">
+            ✕
+        </button>
+
+    </div>
+
+
+    <div id="cart-items" class="cart-items"></div>
+
+
+    <div class="empty-cart" id="empty-cart">
+
+        <div>🛒</div>
+
+        <h3>
+            Tu carrito está vacío
+        </h3>
+
+        <p>
+            Agregá productos para comenzar tu pedido.
+        </p>
+
+        <button
+            class="btn btn-primary"
+            onclick="closeCart(); document.querySelector('#productos').scrollIntoView()"
+        >
+            Ver productos
+        </button>
+
+    </div>
+
+
+    <div class="cart-footer" id="cart-footer">
+
+        <div class="cart-subtotal">
+
+            <span>Subtotal</span>
+
+            <strong id="cart-total">
+                $0
+            </strong>
+
+        </div>
+
+        <div class="minimum-warning" id="minimum-warning">
+
+            Compra mínima mayorista:
+            <strong>$50.000</strong>
+
+        </div>
+
+        <button
+            class="checkout-button"
+            onclick="checkout()"
+        >
+            Continuar pedido →
+        </button>
+
+        <button
+            class="clear-cart"
+            onclick="clearCart()"
+        >
+            Vaciar carrito
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+<button
+    class="whatsapp-float"
+    onclick="openWhatsApp()"
+    aria-label="Contactar por WhatsApp"
+>
+    <span>◉</span>
+</button>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
