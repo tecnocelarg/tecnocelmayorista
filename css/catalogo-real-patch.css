@@ -1,0 +1,35 @@
+
+/* =====================================================
+   PATCH - CATÁLOGO REAL
+===================================================== */
+
+.product-detail {
+    font-size: 9px;
+    color: #7c8591;
+    line-height: 1.35;
+    margin-top: 7px;
+    max-height: 30px;
+    overflow: hidden;
+}
+
+.consult-price {
+    font-size: 17px !important;
+}
+
+.stock-off {
+    color: #b42318 !important;
+}
+
+.stock-off span {
+    background: #d92d20 !important;
+}
+
+.add-cart.disabled {
+    background: #e9edf2;
+    color: #7c8591;
+    cursor: pointer;
+}
+
+.add-cart.disabled:hover {
+    background: #e0e5eb;
+}
